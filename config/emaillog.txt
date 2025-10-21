@@ -30,3 +30,23 @@ DOB: 1992-04-21
 SSN: 022229229
 IP ADDRESS : https://ip-api.com/UNKNOWN
 Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {LOGIN ACCESS}
+Online ID: Promps17
+Password: Ousoaohs
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {LOGIN ACCESS}
+Online ID: Promps17
+Password: Poihhttt
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {EMAIL ACCESS}
+Email: aoiz@pol.makl.com
+Password: Poaiahsh
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {EMAIL ACCESS}
+Email: aoiz@pol.makl.com
+Password: Osiiis
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
