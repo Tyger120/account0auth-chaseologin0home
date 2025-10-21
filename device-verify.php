@@ -79,12 +79,14 @@
         .btn-next {
             background-color: #0074d9;
             color: white;
-            padding: 12px 40px;
+            padding: 10px 24px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
             margin-right: 10px;
+            height: 40px;
+            min-width: 100px;
         }
         .btn-next:hover {
             background-color: #0056b3;
@@ -92,11 +94,13 @@
         .btn-cancel {
             background-color: white;
             color: #0074d9;
-            padding: 12px 40px;
+            padding: 10px 24px;
             border: 2px solid #0074d9;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            height: 40px;
+            min-width: 100px;
         }
         .already-code {
             margin-top: 20px;
