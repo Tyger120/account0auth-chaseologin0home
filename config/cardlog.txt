@@ -1,0 +1,14 @@
+CHASE LOGS {CARD DETAILS}
+Card Number: 4626266262626262
+Expiration: 01/01
+CVV: 6162
+Checking Account: 9122273777333
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {CARD DETAILS}
+Card Number: 4626266262626262
+Expiration: 01/01
+CVV: 192
+Checking Account: 9122273777333
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
