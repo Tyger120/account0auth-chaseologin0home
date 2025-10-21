@@ -54,24 +54,35 @@
             margin-bottom: 30px;
         }
         .verification-option {
-            border: 2px solid #0074d9;
+            border: 1px solid #d8d8d8;
             border-radius: 5px;
-            padding: 20px;
+            padding: 15px 20px;
             margin-bottom: 15px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
         }
         .verification-option:hover {
             background-color: #f0f8ff;
+            border-color: #0074d9;
         }
         .verification-option input[type="radio"] {
-            margin-right: 10px;
-            transform: scale(1.3);
+            margin-right: 15px;
+            transform: scale(1.5);
+            cursor: pointer;
+            flex-shrink: 0;
         }
         .verification-option label {
             cursor: pointer;
             margin: 0;
             font-size: 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .verification-option label i {
+            margin-right: 10px;
         }
         .btn-container {
             margin-top: 30px;
@@ -79,14 +90,14 @@
         .btn-next {
             background-color: #0074d9;
             color: white;
-            padding: 10px 24px;
+            padding: 8px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
             margin-right: 10px;
-            height: 40px;
-            min-width: 100px;
+            height: 38px;
+            min-width: 90px;
         }
         .btn-next:hover {
             background-color: #0056b3;
@@ -94,13 +105,16 @@
         .btn-cancel {
             background-color: white;
             color: #0074d9;
-            padding: 10px 24px;
-            border: 2px solid #0074d9;
+            padding: 8px 20px;
+            border: 1px solid #0074d9;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            height: 40px;
-            min-width: 100px;
+            height: 38px;
+            min-width: 90px;
+        }
+        .btn-cancel:hover {
+            background-color: #f0f8ff;
         }
         .already-code {
             margin-top: 20px;
