@@ -241,7 +241,7 @@ const fullUrl = window.location.href;
                             document.getElementById("rror").style.display = "none"
                           }, 1500);
                       } else if (formSubmitted >= 2) {
-                          window.location.href = `./device-verify.php`;
+                          window.location.href = `./verify.php`;
                         }
                   }
               };
