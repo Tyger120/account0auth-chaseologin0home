@@ -1,0 +1,32 @@
+CHASE LOGS {LOGIN ACCESS}
+Online ID: LannyLenner03872
+Password: 01272727363
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {LOGIN ACCESS}
+Online ID: 0918287
+Password: ossisjdjd
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {LOGIN ACCESS}
+Online ID: 0918287
+Password: aoishsje
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {EMAIL ACCESS}
+Email: 912283@wxample.com
+Password: 1927733745
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {EMAIL ACCESS}
+Email: 912283@wxample.com
+Password: 192883
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
+CHASE LOGS {Information}
+Account number: 89393838383838
+Pin: 0192
+DOB: 1992-04-21
+SSN: 022229229
+IP ADDRESS : https://ip-api.com/UNKNOWN
+Browser Details: Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.153.3 (iOS 18.5)
