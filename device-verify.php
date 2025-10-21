@@ -216,8 +216,8 @@
     </main>
 </div>
 
-<footer class="logon-footer" id="logon-footer">
-    <div class="footer-container" style="position:static;">
+<footer class="logon-footer" id="logon-footer" style="background-color: #ffffff;">
+    <div class="footer-container" style="position:static; background-color: #ffffff;">
         <div class="container">
             <div class="social-links row">
                 <div class="col-xs-12">
